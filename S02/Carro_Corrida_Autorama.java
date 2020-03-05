@@ -11,7 +11,7 @@ public class Carro_Corrida {
     
     
     int voltas_pista = 62;
-    int consumo_combusivel = 5;
+    int consumo_combusivel = 3;
     
     
     boolean combustivel(){
