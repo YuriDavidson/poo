@@ -33,21 +33,28 @@ public class Grafite {
         void escrever(int qtd_escrever){
             
             this.qtd_escrever = qtd_escrever;
-            
+           
             
             if(this.grafite == null)
-		System.out.println("não tem nenhuma ponta");
-            if(this.tamanho_ponta < 2)
+		System.out.println("não tem nenhuma ponta selecionada");
+            else if(this.tamanho_ponta <= 2)
 		System.out.println("O tamanho da ponta eh insuficiente para escrever algo");
             else if(this.tamanho_ponta > 15)
 		System.out.println("Tamanho da ponta eh muito grande para o grafite");
             
-            else{
+            else if(this.tamanho_ponta > 2 ){
+                
                 for(int i = 0; i < qtd_escrever; i++){
-            
-			System.out.println("Escrevendo...");
-                        
-                }tamanho_ponta -= this.qtd_escrever;
+                   
+                   if(this.tamanho_ponta > 2){
+                    
+                    System.out.println("Escrevendo...");
+                    this.tamanho_ponta --;
+                    
+                        }
+                   else
+                       System.out.println("A ponta está pequena para escrever");
+                }
             }     
         }
         
@@ -88,8 +95,8 @@ public class Grafite {
 				
                                 Ponta ponta = grafite.grafite; 
                                 grafite = new Grafite(Integer.parseInt(ui[1]));
+                                grafite.colocar_ponta(grafite.tamanho_ponta);
                                 double tipo_ponta = Integer.parseInt(ui[2]);
-				grafite.colocar_ponta(grafite.tamanho_ponta);
                                 Ponta tipo = new Ponta(tipo_ponta);
 				grafite.usar(tipo);
 			}
