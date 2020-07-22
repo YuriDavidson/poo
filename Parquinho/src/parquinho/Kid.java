@@ -6,7 +6,10 @@ public class Kid {
     private int idade;
     private String nome;
     
+    public void Kid(){
     
+    
+    }
     
     public String getnome(){
         return nome;
@@ -26,7 +29,7 @@ public class Kid {
     
     public String toString(){
     
-        return nome + ":" + idade;
+        return getnome() + ":" + getidade();
     
     }
     
