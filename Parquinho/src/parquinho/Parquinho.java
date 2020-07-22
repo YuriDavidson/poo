@@ -12,10 +12,10 @@ public class Parquinho {
         Kid crianca = new Kid();
         PulaPula toy = new PulaPula();
         
-        //crianca.nome = ler.nextLine();
         
-        ArrayList<String> kidwait = new ArrayList();
-        ArrayList<String> kidplay = new ArrayList();
+        
+        ArrayList<Kid> kidwait = new ArrayList();
+        ArrayList<Kid> kidplay = new ArrayList();
         
         while(true){
         
@@ -32,7 +32,7 @@ public class Parquinho {
 			}
                         if(opc.equals("show")){
 				
-                                    //crianca.status();
+                               
                                     
                                    for(int i = kidwait.size() - 1; i >= 0; --i)
 					System.out.print(kidwait.get(i) + " ");
@@ -42,7 +42,7 @@ public class Parquinho {
                                     System.out.print("[ ");
                                     
                                     for (int j = 0; j < kidplay.size() ; j++) {
-                                    System.out.printf(kidplay.get(j) + " ");
+                                    System.out.println(kidplay.get(j) + " ");
                                     }
                                       System.out.print("]\n");
     }
@@ -50,19 +50,17 @@ public class Parquinho {
 			
                         else if(opc.equals("chegou")){
 			
-                                //vetor.add(Integer.parseInt(a[i]));
-                                //vetor.add(crianca.setnome(a[1]));
-                                   crianca.setnome(a[1]); 
-                                   crianca.setidade((Integer.parseInt(a[2])));
-                                   
-                                   kidwait.add(crianca.getnome() + crianca.getidade());
-                                    
-                                    
-			}
+                              
+                                   crianca.setnome(a[2]); 
+                                   crianca.setidade((Integer.parseInt(a[1])));
+                                 
+                                   kidwait.add(crianca);
+       
+                       }
                         
                         else if(opc.equals("entrou")){
                             
-                            //pulapula.add(crianca.getnome() + crianca.getidade());
+                           
                             
                             int tamanho = kidplay.size();
                             
@@ -74,6 +72,7 @@ public class Parquinho {
                             else{
                             kidplay.add(kidwait.get(0));
                             kidwait.remove(kidwait.get(0));
+                            
                             
                             toy.setSaldo(toy.getSaldo() + 2);
                             
@@ -88,6 +87,45 @@ public class Parquinho {
                            kidplay.remove(kidplay.get(0));
                            
                         }
+                        
+                        
+                         else if(opc.equals("papai")){
+                             
+                             String Nome_Kid;
+                             
+                             for(int i = 0; i < kidwait.size(); i++){
+                             
+                                 if(kidwait.get(i).equals(a[1])){
+                                     
+                                     kidwait.remove(i);
+                                 
+                                 }
+                                 else{
+                                     System.out.println("A crianca nao esta na fila");
+                                 }
+                                 
+                             }
+                             
+                             for(int j = 0; j < kidplay.size(); j++){
+                                 
+                                 if(kidplay.get(j).equals(a[1])){
+                                     
+                                     kidplay.remove(j);
+                                 
+                                 }else{
+                                     
+                                     System.out.println("A crianca nao esta no pula-pula");
+                                    
+                                 }
+                             
+                             }
+                             
+                         
+                         }
+                        
+                         else{
+                             System.out.println("opc invalida! , tente novamente.");
+                         }
         
         }
         

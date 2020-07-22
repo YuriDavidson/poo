@@ -2,12 +2,11 @@ package parquinho;
 
 public class Kid {
     
-    String nome;
-    int idade;
     
-    public Kid(){
+    private int idade;
+    private String nome;
     
-    }
+    
     
     public String getnome(){
         return nome;
@@ -25,11 +24,10 @@ public class Kid {
         this.idade = idade;
     }
     
+    public String toString(){
     
-//    void status(){
-//        
-//        System.out.println("[" + this.getnome() + ":"+this.getidade()+ "]\n");
-//    }
+        return nome + ":" + idade;
     
+    }
     
 }
